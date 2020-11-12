@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #777;
+}
+
+
+html, body {
+    margin:0;
+    padding:0;
+
+}
+
+.nav ul {
+    margin:0;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    display: inline-block;
+    padding: .5em;
+    color: white;
+    text-decoration: none;
+}
+
+.main_nav{
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: lighter;
+    border-bottom: 1px solid rgba(255,255,255,.3)
+}
+
+.nav a:hover {
+     background-color: rgba(255,255,255,.3);
+}
+
+.main_header {
+    background-image: url("images/header1.jpg");
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+.name-small {
+    text-align: center;
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: normal;
+    color: coral;
+}
+
+.name-large {
+    font-size: 6em;
+}
+
+.content-section{
+    text-align: center;
+    margin: 1em;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+.section_header {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: normal;
+    color: dimgrey;
+    text-align: center;
+    font-size: 2em;
+}
+
+.profile-pic{
+    float:left;
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    border-radius:50%;
+}
+
+.main_footer{
+    background-color: darkolivegreen;
+    color: white;
+    padding: .25em 0;
+
+}
+
+.footer_subtitle {
+    text-align: center;
+    margin: 0;
+    font-size: 2em;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: normal;
+    color: white;
+}
+
+.main_footer_container {
+    display: flex;
+    align-items: center;
+}
+
+.main_footeer_container ul {
+    flex-grow: 1;
+    text-align: end;
+}
+
+.footer_nav{
+    padding: 0 .5em;
+}
+
+.white_text{
+    color:white;
+}
