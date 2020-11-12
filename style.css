@@ -4,7 +4,7 @@
     color: #777;
 }
 
-
+/*header*/
 html, body {
     margin:0;
     padding:0;
@@ -42,21 +42,24 @@ html, body {
     background-size: cover;
     padding-bottom: 30px;
 }
-
+/*Don't even know if I need both of these or just one*/
 .name-small {
     text-align: center;
     margin: 0;
     font-size: 3em;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: normal;
-    color: coral;
+    color: navajowhite;
 }
 
 .name-large {
     font-size: 6em;
 }
+/*end of ??*/
+/*end header*/
 
-.content-section{
+/*Homepage*/
+.content_section{
     text-align: center;
     margin: 1em;
 }
@@ -75,14 +78,16 @@ html, body {
     font-size: 2em;
 }
 
-.profile-pic{
+.profile_pic{
     float:left;
     height: 200px;
     width: 200px;
     margin: 15px;
     border-radius:50%;
 }
+/*end homepage*/
 
+/*All footer stuff*/
 .main_footer{
     background-color: darkolivegreen;
     color: white;
@@ -113,6 +118,35 @@ html, body {
     padding: 0 .5em;
 }
 
+/*Just to make text white used it in footer*/
 .white_text{
     color:white;
 }
+/*End footer stuff*/
+
+/*All work experience page*/
+.box {
+    border: 10px solid transparent;
+    margin: 1em auto;
+    padding: 0.5em 1em;
+}
+
+.left_content_section {
+    text-align: left;
+    margin: 1em;
+}
+
+.center{
+    text-align:center;
+}
+/*End all work experience page*/
+
+/* Prjoects page*/
+.project_pic {
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin: 1em 1em;
+    border-radius: 10%;
+}
+/*End projects page*/
