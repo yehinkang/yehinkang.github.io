@@ -88,11 +88,14 @@ html, body {
 /*end homepage*/
 
 /*All footer stuff*/
-.main_footer{
+.main_footer {
     background-color: darkolivegreen;
     color: white;
     padding: .25em 0;
-
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer_subtitle {
