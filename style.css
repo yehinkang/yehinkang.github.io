@@ -5,19 +5,23 @@
 }
 
 /*header*/
-html, body {
-    margin:0;
-    padding:0;
 
+/*this next one is to remove all margins from body, all the class*/
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
+/*All the ul's inside a navigation class will not have a margin*/
 .nav ul {
     margin:0;
 }
 
+/*All the li's inside a navigation class will display inline*/
 .nav li {
     display: inline;
 }
+
 
 .nav a {
     display: inline-block;
@@ -37,11 +41,13 @@ html, body {
      background-color: rgba(255,255,255,.3);
 }
 
+/*this is setting the background image and the sizing of the header*/
 .main_header {
     background-image: url("images/header1.jpg");
     background-size: cover;
     padding-bottom: 30px;
 }
+
 /*Don't even know if I need both of these or just one*/
 .name-small {
     text-align: center;
@@ -114,7 +120,7 @@ html, body {
     text-align: end;
 }
 
-.footer_nav{
+.footer_nav {
     padding: 0 .5em;
 }
 
@@ -139,6 +145,14 @@ html, body {
 .center{
     text-align:center;
 }
+
+.work_pic {
+    float: inherit;
+    height: 266.67px;
+    width: 355.56px;
+    margin: 20px;
+    border-radius: 10%;
+}
 /*End all work experience page*/
 
 /* Prjoects page*/
@@ -150,3 +164,20 @@ html, body {
     border-radius: 10%;
 }
 /*End projects page*/
+
+/*Generic Class*/
+.index_pic {
+    float: inherit;
+    height: 176px;
+    width: 234.67px;
+    margin: 20px;
+    border-radius: 10%;
+}
+
+.right_pic {
+    float: right;
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    border-radius: 50%;
+}
