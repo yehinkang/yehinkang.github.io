@@ -141,8 +141,8 @@
 
     .work_pic {
         float: inherit;
-        height: 266.67px;
-        width: 355.56px;
+        height: 133px;
+        width: 178px;
         margin: 20px;
         border-radius: 10%;
     }
@@ -160,7 +160,6 @@
     .youtube_video {
         width: 280px;
         height: 158px;
-        frameborder: 0;
     }
     /*End projects page*/
 
@@ -318,7 +317,6 @@
     .youtube_video {
         width: 560px;
         height: 315px;
-        frameborder: 0;
     }
     /*End projects page*/
 
