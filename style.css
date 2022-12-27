@@ -151,10 +151,16 @@
     /* Prjoects page*/
     .project_pic {
         float: left;
-        height: 200px;
-        width: 200px;
-        margin: 1em 1em;
+        height: 210px;
+        width: 210px;
+        margin: 2em 2em;
         border-radius: 10%;
+    }
+
+    .youtube_video {
+        width: 280px;
+        height: 158px;
+        frameborder: 0;
     }
     /*End projects page*/
 
@@ -308,7 +314,14 @@
         margin: 1em 1em;
         border-radius: 10%;
     }
+
+    .youtube_video {
+        width: 560px;
+        height: 315px;
+        frameborder: 0;
+    }
     /*End projects page*/
+
 }
 /*end of screen size dependant css*/
 
@@ -338,4 +351,6 @@ html, body {
     margin: 15px;
     border-radius: 50%;
 }
+
+
 /*end of generic classes*/
