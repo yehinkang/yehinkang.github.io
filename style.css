@@ -1,10 +1,116 @@
+
+/*Let's try and make a media query to figure out screen size*/
+/*Header*/
 * {
     box-sizing: border-box;
     font-family: 'Noto Sans JP', sans-serif;
     color: #777;
 }
 
-/*header*/
+/*Any older android + iphone se form factor*/
+@media screen and (max-width:599px) {
+    /*this is setting the background image and the sizing of the header*/
+    .main_header {
+        background-image: url("images/header1.jpg");
+        background-size: cover;
+        padding-bottom: 30px;
+    }
+
+    .main_nav {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: lighter;
+        border-bottom: 1px solid rgba(255,255,255,.3)
+    }
+
+    /*All the ul's inside a navigation class will not have a margin*/
+    .nav ul {
+        margin: 0;
+    }
+
+    /*All the li's inside a navigation class will display inline*/
+    .nav li {
+        display: inline;
+    }
+
+
+    .nav a {
+        display: inline-block;
+        padding: .5em;
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav a:hover {
+            background-color: rgba(255,255,255,.3);
+     }
+
+    /*Don't even know if I need both of these or just one*/
+    .name-small {
+        text-align: center;
+        margin: 0;
+        font-size: 3em;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: normal;
+        color: navajowhite;
+    }
+    /*end of ??*/
+    /*end header*/
+
+}
+
+
+/*After this this is mostly landscape mode and should be pretty similar to a laptop (hopefully)*/
+@media screen and (min-width:600px) {
+    /*this is setting the background image and the sizing of the header*/
+    .main_header {
+        background-image: url("images/header1.jpg");
+        background-size: cover;
+        padding-bottom: 30px;
+    }
+
+    .main_nav {
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: lighter;
+        border-bottom: 1px solid rgba(255,255,255,.3)
+    }
+
+    /*All the ul's inside a navigation class will not have a margin*/
+    .nav ul {
+        margin: 0;
+    }
+
+    /*All the li's inside a navigation class will display inline*/
+    .nav li {
+        display: inline;
+    }
+
+
+    .nav a {
+        display: inline-block;
+        padding: .5em;
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav a:hover {
+            background-color: rgba(255,255,255,.3);
+     }
+
+    .name-large {
+        text-align: center;
+        margin: 0;
+        font-size: 6em;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: normal;
+        color: navajowhite;
+    }
+    /*end of ??*/
+    /*end header*/
+}
+
+/*Start of non screen size dependant css*/
 
 /*this next one is to remove all margins from body, all the class*/
 html, body {
@@ -12,57 +118,8 @@ html, body {
     padding: 0;
 }
 
-/*All the ul's inside a navigation class will not have a margin*/
-.nav ul {
-    margin:0;
-}
-
-/*All the li's inside a navigation class will display inline*/
-.nav li {
-    display: inline;
-}
 
 
-.nav a {
-    display: inline-block;
-    padding: .5em;
-    color: white;
-    text-decoration: none;
-}
-
-.main_nav{
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: lighter;
-    border-bottom: 1px solid rgba(255,255,255,.3)
-}
-
-.nav a:hover {
-     background-color: rgba(255,255,255,.3);
-}
-
-/*this is setting the background image and the sizing of the header*/
-.main_header {
-    background-image: url("images/header1.jpg");
-    background-size: cover;
-    padding-bottom: 30px;
-}
-
-/*Don't even know if I need both of these or just one*/
-.name-small {
-    text-align: center;
-    margin: 0;
-    font-size: 3em;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: normal;
-    color: navajowhite;
-}
-
-.name-large {
-    font-size: 6em;
-}
-/*end of ??*/
-/*end header*/
 
 /*Homepage*/
 .content_section{
