@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <html>
 
 <head>
+    <!--The folowing is what will show up in the tab as website name-->
     <title>Yeh-In Kang</title>
+
+    <!--The folowing is what will show up on google-->
     <meta name="description" content="Yeh-In's personal webpage">
+
+    <!--The folowing is a link to the css stylesheet that determines how the website will look-->
     <link rel="stylesheet" href="style.css" />
+
+    <!--This next bit is to link to the animate on scroll library that will be used to animate the text on the webpage-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!--This is for the little icon in the tab (favicon)-->
+    <link rel="icon" href="images\Saab_900.png">
+
+    <!--This ensures that the size of the viewport responds to screen width-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -55,7 +68,6 @@
             </p>
         </div>
 
-
         <div class="box">
             <p>
                 <h3><strong> Why Engineering Physics?</strong></h3>
@@ -102,6 +114,13 @@
             </ul>
         </div>
     </footer>
+
+    <!--The following is initialising the script needed for animate on scroll to run-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 </body>
 
 </html>
