@@ -76,14 +76,6 @@
         text-align: center;
         font-size: 2em;
     }
-
-    .profile_pic {
-        float: left;
-        height: 200px;
-        width: 200px;
-        margin: 15px;
-        border-radius: 50%;
-    }
     /*end homepage*/
 
     /*All footer stuff*/
@@ -128,6 +120,7 @@
         border: 10px solid transparent;
         margin: 1em auto;
         padding: 0.5em 1em;
+        z-index: 1;
     }
 
     .left_content_section {
@@ -165,31 +158,34 @@
 
 }
 
-
 /*desktop*/
 @media screen and (min-width:600px) {
     /*this is setting the background image and the sizing of the header*/
     .main_header {
         background-image: url("images/header1.jpg");
         background-size: cover;
-        padding-bottom: 30px;
+        padding-bottom: 200px;
+        z-index: 9999;
     }
 
     .main_nav {
         text-align: center;
-        font-size: 1.1em;
+        font-size: 1.5em;
         font-weight: lighter;
-        border-bottom: 1px solid rgba(255,255,255,.3)
+        border-bottom: 1px solid rgba(255,255,255,.3)''
+        z-index: 9999;
     }
 
     /*All the ul's inside a navigation class will not have a margin*/
     .nav ul {
         margin: 0;
+        z-index: 9999;
     }
 
     /*All the li's inside a navigation class will display inline*/
     .nav li {
         display: inline;
+        z-index: 9999;
     }
 
     /* all the a's inside the nav class will follow this*/
@@ -198,21 +194,13 @@
         padding: .5em;
         color: white;
         text-decoration: none;
+        z-index: 9999;
     }
-
     /*all this does is to add the darkening when hovering*/
     .nav a:hover {
             background-color: rgba(255,255,255,.3);
+            z-index: 9999;
      }
-    /*This is for a large style of text that I'm using for desktop*/
-    .name-large {
-        text-align: center;
-        margin: 0;
-        font-size: 6em;
-        font-family: 'Noto Sans JP', sans-serif;
-        font-weight: normal;
-        color: navajowhite;
-    }
 
     /*Homepage*/
     .content_section {
@@ -233,21 +221,13 @@
         text-align: center;
         font-size: 2em;
     }
-
-    .profile_pic {
-        float: left;
-        height: 200px;
-        width: 200px;
-        margin: 15px;
-        border-radius: 50%;
-    }
     /*end homepage*/
 
     /*All footer stuff*/
     .main_footer {
         background-color: darkolivegreen;
         color: white;
-        padding: .25em 0;
+        padding: 1em 0;
         width: 100%;
     }
 
@@ -271,7 +251,7 @@
     }
 
     .footer_nav {
-        padding: 0 .5em;
+        padding: 0 1em;
     }
 
     /*Just to make text white used it in footer*/
@@ -279,50 +259,89 @@
         color: white;
     }
     /*End footer stuff*/
-
-    /*All work experience page*/
-    .box {
-        border: 10px solid transparent;
-        margin: 1em auto;
-        padding: 0.5em 1em;
-    }
-
-    .left_content_section {
-        text-align: left;
-        margin: 1em;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    .work_pic {
-        float: inherit;
-        height: 266.67px;
-        width: 355.56px;
-        margin: 20px;
-        border-radius: 10%;
-    }
-    /*End all work experience page*/
-
-    /* Prjoects page*/
-    .project_pic {
-        float: left;
-        height: 200px;
-        width: 200px;
-        margin: 1em 1em;
-        border-radius: 10%;
-    }
-
-    .youtube_video {
-        width: 560px;
-        height: 315px;
-    }
-    /*End projects page*/
-
 }
 /*end of screen size dependant css*/
 
+
+/**/
+/**/
+/*This is for the dropdown menu on the projects tab in the nav*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 110px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: darkolivegreen;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    z-index: 9999;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+/**/
+/**/
+
+/**/
+/**/
+/*This is for the dropdown menu on the main part of the Projects page tab in the nav*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: darkolivegreen;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+/**/
+/**/
+
+/* scss */
+[data-aos] {
+  pointer-events: none;
+  &.aos-animate {
+    pointer-events: auto;
+  }
+}
+
+.aos-init [data-aos].aos-animate {
+    transform: unset;
+  }
 
 
 /*this next one is to remove all margins from body, all the class*/
@@ -332,7 +351,6 @@ html, body {
 }
 
 
-
 /*Generic Class*/
 .index_pic {
     float: inherit;
@@ -340,15 +358,31 @@ html, body {
     width: 234.67px;
     margin: 20px;
     border-radius: 10%;
+    display: inline-block;
 }
 
-.right_pic {
-    float: right;
-    height: 200px;
-    width: 200px;
-    margin: 15px;
-    border-radius: 50%;
+.index_pic:hover {
+    opacity: 0.5;
+
+}
+  
+.centered-caption {
+    text-align: center;
 }
 
-
+.article_pic {
+    float: inherit;
+    height: 352px;
+    width: 469.34px;
+    margin: 20px;
+    border-radius: 10%;
+    display: inline-block;
+    
+  }
+  
+  .article_figure {
+    margin: 20px;
+    border-radius: 10%;
+    display: inline-block;
+  }
 /*end of generic classes*/
