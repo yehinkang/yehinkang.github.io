@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!--The folowing is what will show up in the tab as website name-->
+    <title>Yeh-In Kang</title>
+
+    <!--The folowing is what will show up on google-->
+    <meta name="description" content="Yeh-In's personal webpage">
+
+    <!--The folowing is a link to the css stylesheet that determines how the website will look-->
+    <link rel="stylesheet" href="style.css" />
+
+    <!--This next bit is to link to the animate on scroll library that will be used to animate the text on the webpage-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!--This next bit is to link to the photoswipe library for the portfolio page-->
+    <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
+
+    <!--This is for the little icon in the tab (favicon)-->
+    <link rel="icon" href="images\icons\favicon-32x32.png">
+
+    <!--This ensures that the size of the viewport responds to screen width-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--This is what will pop up on google-->
+    <meta name="description" content="This is the personal webpage of Yeh-In Kang" />
+    <meta name="author" content="Yeh-In Kang" />
+
+    <!--This next bit is to link to the bootstrap css framework-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+        <!-- Need a container divclass for bootstrap-->
+        <div class="container">
+
+            <!--Name doubles as a home menu-->
+            <a class="navbar-brand" href="index.html">YEH-IN KANG</a>
+
+            <!-- Menu Button-->
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Colapsing list associated with the navbar-->
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <nav class="navbar-nav ms-auto">
+                        <!--Link to the about section-->
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+ 
+                        <!--Made dropdown menu for projects-->
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
+                            <div class="dropdown-content">
+                                <a href="Cubesat_Imager.html">Cubesat Imaging Payload</a>
+                                <a href="https://devpost.com/software/democratech-ouija">Democra.tech Ouija</a>
+                                <a href="Saab900.html">1986 Saab 900</a>
+                                <a href="Magnetic field control.html">...More</a>
+                            </div>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                </nav>
+            </div>
+        </div>
+
+    <!--Now starting to get to the body-->
+    <section class="content_section container">
+
+        <h2 class="section_header" data-aos="fade-up" data-aos-delay="1500" data-aos-duration="1500">About Me</h2>
+        <p class="box" data-aos="fade-up" data-aos-delay="1500" data-aos-duration="1500">
+            I am currently in my 5th year of a BSc in Engineering Physics, Nanoengineering option, at the University of Alberta.
+            My interests include vintage SAAB's, Cubesats, and Electronics amongst other things.
+            I've always got a project or two going on.
+        </p>
+
+        <div class="box">
+            <h2><strong data-aos="fade-up" data-aos-delay="1500" data-aos-duration="1500">Here's some Stuff I've messed around with</strong></h2>
+            <figure class="index_pic" data-aos="fade-up" data-aos-delay="2000" data-aos-duration="1500" data-aos-once ="true">
+                <a href="Cubesat_Imager.html">
+                    <img class="index_pic" src="images/Projects/Iris mk2.png" alt="If you see this something went wrong">
+                </a>
+                <figcaption class="centered-caption" href="work_experience.html">Cubesat Imaging Payload</figcaption>
+            </figure>
+            <figure class="index_pic" data-aos="fade-up" data-aos-delay="2000" data-aos-duration="1500" data-aos-once ="true">
+                    <iframe class="index_pic" src="https://www.youtube.com/embed/GNDJWDLz9J4" title="CNC Ouija Board" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <a href="https://devpost.com/software/democratech-ouija">
+                <figcaption class="centered-caption">Democra.tech Ouija</figcaption>
+                </a>
+            </figure>
+            <figure class="index_pic" data-aos="fade-up" data-aos-delay="2000" data-aos-duration="1500" data-aos-once ="true">
+                <a href="Saab900.html">
+                    <img class="index_pic" src="images/Projects/Saab_900.jpg" alt="If you see this something went wrong">
+                </a>
+                <figcaption class="centered-caption">1986 Saab 900</figcaption>
+            </figure>
+        </div>
+
+
+        <div class="box">
+            <figure class="index_pic">
+                <a href="Magnetic field control.html" class="index_pic" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500" data-aos-once ="true">
+                    <img class="index_pic" src="images/Projects/MagControl.jpg" alt="If you see this something went wrong">
+                <figcaption class="centered-caption" href="Magnetic field control.html">Magnetic Field Control System</figcaption>
+                </a>
+            </figure>
+            <figure class="index_pic" class="index_pic" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500" data-aos-once ="true">
+                <iframe class="index_pic" src="https://www.youtube.com/embed/69XpbDWuxvs" title="Rock Cuitar Pedal on Youtube" style="border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a href="https://devpost.com/software/rock-on">
+                <figcaption class="centered-caption">Rock On</figcaption>
+                </a>
+            </figure>
+            <figure class="index_pic" class="index_pic" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500" data-aos-once ="true">
+                <a href="https://devpost.com/software/juan-wick">
+                    <img class="index_pic" src="images/Projects/juanwickgameplaysquare.jpg" alt="If you see this something went wrong">
+                <figcaption class="centered-caption">Juan Wick</figcaption>
+                </a>
+            </figure>
+        </div>
+
+        <br />
+        <br />
+
+    </section>
+
+    <footer class= "main_footer">
+        <div class="container main_footer_container">
+            <h2 class="footer_subtitle"> Contact me:</h2>
+            <ul class="nav footer_nav">
+                <li class="white_text"><img src="images/icons/Mail.png" alt="Email" width="10" height="10">:<a class="white_text" href="mailto: yehin@ualberta.ca" target="blank">yehin@ualberta.ca</a></li>
+                <li class="white_text"><img src="images/icons/Linkedin.png" alt="Linked in" width="10" height="10">:<a class="white_text" href="https://www.linkedin.com/in/yehinkang/" target="blank">linkedin.com/in/yehinkang</a></li>
+                <li class="white_text"><a href="https://drive.google.com/file/d/13O9pw2jBrn-u02UCKmlRg8ecI1dA6ivU/view?usp=sharing">Click here for my Resume</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!--The following is initialising the script needed for animate on scroll to run-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!--Initiating another code this time for the photoswipe library-->
+    <script type="module">
+        import PhotoSwipeLightbox from 'photoswipe/dist/photoswipe-lightbox.esm.js';
+        // or 'photoswipe-dynamic-caption-plugin' if using package manager
+        import PhotoSwipeDynamicCaption from 'https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.esm.js';
+        
+        const lightbox = new PhotoSwipeLightbox({
+          gallerySelector: '#gallery',
+          childSelector: '.pswp-gallery__item',
+          pswpModule: () => import('photoswipe/dist/photoswipe.esm.js'),
+        
+          // Optional padding for images,
+          // note that this is an option of PhotoSwipe, not a plugin
+          paddingFn: (viewportSize) => {
+            return {
+              top: 30, bottom: 30, left: 70, right: 70
+            }
+          },
+        });
+        
+        const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+          // Plugins options, for example:
+          type: 'auto',
+        });
+        
+        // make sure you init photoswipe core after plugins are added
+        lightbox.init();
+    </script>
+
+    <!--This is necessary for bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+
+    <div id="bottom"></div>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+/* The following sets variables that will be used in the css*/
+:root {
+    --navbar-font-colour: #ffffff;
+    --navbar-Title-fontsize: 3em;
+    --navbar-textfontsize: 1.5em;
+
+    --subtitle-fontsize: 1.7em;
+
+    --about-font-colour: #ffffff;
+    --about-textfontsize: 1.2em;
+    --about-backgroundcolour: #3D550C;
+
+    --projects-font-colour: #3D550C;
+    --projects-textfontsize: 1.2em;
+
+    --footer-bg-colour: #3D550C;
+}
+
+/* "*" denotes settings that apply to all elements*/
+* {
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* "*" denotes settings that apply to all elements*/
+.navtitlefont{
+    font-size: var(--navbar-Title-fontsize); 
+    color: var(--navbar-font-colour);
+}
+
+/* This makes the toggle navbar button white*/
+.navbar-toggler-icon {
+    filter: invert(100%);
+}
+
+/* Change Navbar colour */
+.navbar {
+    background-image: url("images/header1.jpg");
+    background-size: cover;
+}
+
+/* Change Navbar text colours */
+.nav-link {
+    color: var(--navbar-font-colour);
+    font-size: var(--navbar-textfontsize); 
+}
+
+/* Changes transparency on hover*/
+.nav-link:hover {
+    opacity: 0.5;
+}
+
+/* This is for the profile picture in the about section*/
+.profile-pic {
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+    margin: 1em;
+}
+
+/* This controls the body text in the about section*/
+.about-text {
+    color: var(--about-font-colour);
+    font-size: var(--about-textfontsize); 
+}
+
+/* This controls the subtitle text in the about section*/
+.about-title{
+    color: var(--about-font-colour);
+    font-size: var(--subtitle-fontsize); 
+}
+
+/* This controls the background colour*/
+.about-bg{
+    background-color: var(--about-backgroundcolour);
+}
+
+/* This controls the title text for the portfolio section*/
+.portfolio-title {
+    color: var(--projects-font-colour);
+    font-size: var(--subtitle-fontsize);
+}
+
+/* Added margins for the portfolio titles for the navbar*/
+.portfolio-title-sec {
+    color: var(--projects-font-colour);
+    font-size: var(--subtitle-fontsize);
+    margin-top: 5%; 
+}
+
+/* This controls the body text in the portfolio section*/
+.portfolio-text {
+    color: var(--projects-font-colour);
+    font-size: var(--projects-textfontsize); 
+}
+
+.portfolio-text ul li a {
+    text-decoration: none; /* Removes underline if present */
+    color: inherit; /* Inherits color from parent element */
+}
+
+/* Resizing any images used for the portfolio pics and applying a border radius */
+.portfolio-pic{
+    float: inherit;
+    height: 100%;
+    width: 100%;
+    margin: 0.5em;
+    border-radius: 10%;
+    display: inline-block;
+}
+
+/* Creates a container for videos to sit in centered in the portfolio pic square */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 23.13%; /* for 16:9 aspect ratio */
+    padding-bottom: 23.13%; /* for 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+/* Changes transparency on hover*/
+.portfolio-pic:hover {
+    opacity: 0.5;
+}
+
+
+  
+
+.footer-bg{
+    background-color: var(--footer-bg-colour);
+}

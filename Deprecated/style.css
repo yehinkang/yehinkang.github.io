@@ -21,7 +21,7 @@
         text-align: center;
         font-size: 1.5em;
         font-weight: lighter;
-        border-bottom: 1px solid rgba(255,255,255,.3)
+        border-bottom: 1px solid rgba(95, 14, 14, 0.3)
     }
 
     /*All the ul's inside a navigation class will not have a margin*/
