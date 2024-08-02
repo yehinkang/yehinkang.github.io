@@ -12,11 +12,11 @@
     <!--The folowing is what will show up on google-->
     <meta name="description" content="Yeh-In's personal webpage">
 
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-
     <!--This is for the little icon in the tab (favicon)-->
     <link rel="icon" href="images\icons\YK_favicon.png">
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
     <!--This next bit is to link to the animate on scroll library that will be used to animate the text on the webpage-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <!--This is importing the font to be used on the webpage-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
-		<!--This next bit is to link to the bootstrap css framework and fontawesome-->
+		<!--This next bit is to link to the bootstrap css framework-->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--Important to bring in custom css after bootstrap-->
@@ -34,14 +34,16 @@
   <body>
 		
 		<div class="container d-md-flex align-items-stretch">
-
       <!-- Page Content  -->
       <div class="container d-md-flex align-items-stretch">
         <div id="content" class="p-4 p-md-5 pt-5">
 
           <!-- Making Sections to organise main page this is the intro  -->
-          <section id="intro">
-          <h1 class="mb-4">Yeh-In Kang</h1>
+         <section id="intro">
+          <h6 class="mb-4 text-muted"> <a href="index.html"> &lt;&lt; Home</a> </h6>
+          <h1 class="mb-4">Tool For Seating Front Main Seal</h1>
+          <h6 class="mb-4 text-muted">Date Updated</h6>
+          <h6 class="mb-4 text-muted">Tags: x,y </h6>
           <div class="col-lg-6"> 
             <img class="img-fluid profile-pic mx-auto d-block" src="images/Garage_pfp.png" alt="if you see this something went wrong"> 
           </div> 
@@ -49,30 +51,30 @@
           <!-- Line break to provide margin from the photo to the text -->
           <br>
 
-          <p>I am a recent graduate from Engineering Physics, Nanoengineering option, at the University of Alberta,
-            My interests include vintage SAAB's, Cubesats, and Electronics amongst other things.
-            I've always got a project or two going on, welcome to my website!</p>
+          <p>Insert Pargraph One of lorem ipsum</p>
+
+          <p>Insert Pargraph 2 of lorem ipsum</p>
+
+          <p>Insert Pargraph 3 of lorem ipsum</p>
          </section>
           
          <!-- The following is a recent projects section dedicated to the most recent projects that I've worked on -->
          <section id="Recent-Projects">
-            <h2 class="mb-4">Recent Projects</h2>
+            <h2 class="mb-4">Subheading</h2>
 
-            <ul id="Recent-Projects-List">
-              <li><a href="Projects_Saab_Distributor_Plug.html"> 1990 Saab C900 distributor plug</a></li>
-              <li><a href="Projects_Odds_and_Ends_P2P_File_Server.html"> How to turn your Raspberry Pi 4 into a P2P network server</a></li>
-              <li><a href="Projects_Odds_and_Ends_Highlander_Crankshaft_Pulley.html"> 2002 Toyota Highlander Crankshaft Pulley Tool</a></li>
-              <li><a href="Projects_Saab_1986_Progress.html"> 1986 Saab 900 progress</a></li>
-              <li><a href="Projects_Saab_1990_Progress .html"> 1990 Saab 900 turbo progress</a></li>
-            </ul>
+              <p>Insert Pargraph One of lorem ipsum</p>
+
+              <p>Insert Pargraph 2 of lorem ipsum</p>
+
+              <p>Insert Pargraph 3 of lorem ipsum</p>
               
           </section>
-        </div> 
+        </div>    
         
         <!-- The whole Sidebar-->
         <div id="sidebar-container"></div>
-				
-	    </div>
+
+	      </div>
 		</div>
 
     <!-- JavaScript to load the sidebar -->
@@ -92,7 +94,6 @@
       // Load the sidebar into the container
       loadHTML('sidebar.html', 'sidebar-container');
     </script>
-
 
     <!--The following is initialising the script needed for animate on scroll to run-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
