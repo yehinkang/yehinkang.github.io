@@ -41,34 +41,49 @@
           <!-- Making Sections to organise main page this is the intro  -->
          <section id="intro">
           <h6 class="mb-4 text-muted"> <a href="index.html"> &lt;&lt; Home</a> </h6>
-          <h1 class="mb-4">Avacago</h1>
-          <h6 class="mb-4 text-muted">Date Updated</h6>
+          <h1 class="mb-4">FRoute</h1>
+          <h6 class="mb-4 text-muted">August 29, 2024</h6>
           <h6 class="mb-4 text-muted">Tags: <a href="Tags_Software.html">Software</a> </h6>
           <div class="col-lg-6"> 
-            <img class="img-fluid profile-pic mx-auto d-block" src="images/Garage_pfp.png" alt="if you see this something went wrong"> 
+            <iframe width="420" height="315"src="https://www.youtube.com/watch?v=wsdctPzMlcc"></iframe>         
           </div> 
 
           <!-- Line break to provide margin from the photo to the text -->
           <br>
 
-          <p>Hey welcome to the page</p>
+          <p>Froute was designed for the <a href="https://hacked-2024.devpost.com/">HackEd 2024</a>
+          Hackathon. It consists of a vaguely fruit shaped object that at the press of a button will guide you to
+          a random restaurant within walking distance, eliminating indecision, whilst allowing you to explore your own neighbourhood
+          or a new area.</p>
 
-          <p>As you can see it is still under developement</p>
+          <p>Devpost available here: <a href="https://devpost.com/software/froute">Froute</a></p>
 
-          <p>Things should slowly start to flesh out in the next few weeks</p>
+          <h3>Inspiration</h3>
+          <p>The inspiration for this project came from a desire to solve the time tested problem of being presented with a 
+            plethora of places to go eat, but being paralysed by indecision. We figured the best solution would be to take the 
+            humans out of the equation and for a device that could find a random place to go eat.
+          </p>
+
+          <h3>Why not an App?</h3>
+          <p> We discovered that when presented with a wide selection on google maps it became difficult to figure out what the best place to eat was.
+            By the time everyone's happy with the selection a good half hour is almost always wasted. 
+            Meanwhile Froute actively discourages time wastage on the modern day attention trap that is the smart phone.
+
+          <img class="img-fluid profile-pic mx-auto d-block" src="images/Projects/froute.jpg" alt="if you see this something went wrong">
+
+          <h3>How's it work?</h3>
+          <p> In the hackathon implementation the board that we were using did not have wifi capabilities, as such we tried to get it to work in a roundabout way,
+            connecting to your computer via bluetooth and then using the computer's wifi to get the location data, afterwards it would access the google maps API,
+            which would load up walking instructions that could be scrolled through on the screen, to get to a destination.
+          </p>
+
+          <h3>Current/Future work</h3>
+          <p> I've begun to work on an ESP 32 compatible program for FRoute which would allow for a more seamless connection to the internet.
+            This would allow for easy connection at home, as well as with the added benefit of needing less chips and reducing power consumption.
+            Adding more flash memory via a micro SD card would also be advisable due to the memory contraints of many small microcontroller boards.
+          </p>
          </section>
-          
-         <!-- The following is a recent projects section dedicated to the most recent projects that I've worked on -->
-         <section id="Recent-Projects">
-            <h2 class="mb-4">Subheading</h2>
-
-            <p>Hey welcome to the page</p>
-
-            <p>As you can see it is still under developement</p>
-  
-            <p>Things should slowly start to flesh out in the next few weeks</p>
-              
-          </section>
+      
         </div>    
         
         <!-- The whole Sidebar-->
