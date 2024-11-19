@@ -72,63 +72,75 @@
             <!-- This is where the result will appear -->
         </div>
 
-        <script>
-            let userLocation = null;  // Variable to store the location coordinates
+            <script>
+                let userLocation = null;  // Variable to store the location coordinates
 
-            // Function to get the location from the browser
-            function getLocation() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                        const latitude = position.coords.latitude;
-                        const longitude = position.coords.longitude;
-                        userLocation = { latitude, longitude };  // Store the location
+                // Function to get the location from the browser
+                function getLocation() {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function(position) {
+                            const latitude = position.coords.latitude;
+                            const longitude = position.coords.longitude;
+                            userLocation = { latitude, longitude };  // Store the location
 
-                        alert("Location acquired: " + latitude + ", " + longitude);  // Optional: Alert to confirm location
-                    });
-                } else {
-                    alert("Geolocation is not supported by this browser.");
+                            alert("Location acquired: " + latitude + ", " + longitude);  // Optional: Alert to confirm location
+                        });
+                    } else {
+                        alert("Geolocation is not supported by this browser.");
+                    }
                 }
-            }
 
-            // Event listener for form submission
+                // Event listener for form submission
                 document.getElementById("searchForm").addEventListener("submit", async function(event) {
-                event.preventDefault();  // Prevent form from submitting normally
+                    event.preventDefault();  // Prevent form from submitting normally
 
-                // Ensure that the location has been acquired before sending the request
-                if (!userLocation) {
-                    alert("Please get your location first.");
-                    return;
-                }
+                    // Ensure that the location has been acquired before sending the request
+                    if (!userLocation) {
+                        alert("Please get your location first.");
+                        return;
+                    }
 
-                let searchString = document.getElementById("search").value;
-                let distance = document.getElementById("distance").value;
+                    let searchString = document.getElementById("search").value;
+                    let distance = document.getElementById("distance").value;
 
-                // Update the URL to point to the Render backend
-                let response = await fetch("https://yehinkang-github-io.onrender.com/get-place", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        search_string: searchString,
-                        distance: distance,
-                        latitude: userLocation.latitude,
-                        longitude: userLocation.longitude
-                    })
+                    // Update the URL to point to the Render backend
+                    let response = await fetch("https://yehinkang-github-io.onrender.com/get-place", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            search_string: searchString,
+                            distance: distance,
+                            latitude: userLocation.latitude,
+                            longitude: userLocation.longitude
+                        })
+                    });
+
+                    let data = await response.json();
+
+                    if (data.error) {
+                        document.getElementById("result").innerText = "Error: " + data.error;
+                    } else {
+                        // Check if device is mobile or desktop
+                        let isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+                        let placeName = data.place_name;  // Make sure placeName is in the response
+                        let latitude = data.latitude;     // Ensure latitude and longitude are also in the response
+                        let longitude = data.longitude;
+
+                        if (isMobile) {
+                            // Mobile-friendly format using `geo:` scheme
+                            let geoUrl = `geo:${latitude},${longitude}?q=${encodeURIComponent(placeName)}`;
+                            document.getElementById("result").innerHTML = `<a href="${geoUrl}" target="_blank">${placeName}</a>`;
+                        } else {
+                            // Desktop-friendly Google Maps link with place_id or coordinates
+                            let webUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                            document.getElementById("result").innerHTML = `<a href="${webUrl}" target="_blank">${placeName}</a>`;
+                        }
+                    }
                 });
 
-                let data = await response.json();
-
-                if (data.error) {
-                    document.getElementById("result").innerText = "Error: " + data.error;
-                } else {
-                    // Show the link to Google Maps
-                    let link = `<a href="${data.google_maps_url}" target="_blank">${data.place_name}</a>`;
-                    document.getElementById("result").innerHTML = "Place found: " + link;
-                }
-            });
-
-        </script>
+            </script>
          </section>
       
         </div>    
