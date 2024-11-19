@@ -11,7 +11,8 @@ import os
 # Load environment variables from the .env file (only keep for dev)
 load_dotenv(override=True)
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://yehinkang.github.io/"}}) # Allows for requests to Render from yehinkang.github.io
+CORS(app) # Using this for troubleshooting allows for access from all URL's
+# CORS(app, resources={r"/*": {"origins": "https://yehinkang.github.io/"}}) # Allows for requests to Render from yehinkang.github.io
 
 # Access the API key
 API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
