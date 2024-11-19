@@ -92,7 +92,7 @@
             }
 
             // Event listener for form submission
-            document.getElementById("searchForm").addEventListener("submit", async function(event) {
+                document.getElementById("searchForm").addEventListener("submit", async function(event) {
                 event.preventDefault();  // Prevent form from submitting normally
 
                 // Ensure that the location has been acquired before sending the request
@@ -104,8 +104,8 @@
                 let searchString = document.getElementById("search").value;
                 let distance = document.getElementById("distance").value;
 
-                // Send search parameters and location to the backend
-                let response = await fetch("/get-place", {
+                // Update the URL to point to the Render backend
+                let response = await fetch("https://your-backend.onrender.com/get-place", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -128,6 +128,7 @@
                     document.getElementById("result").innerHTML = "Place found: " + link;
                 }
             });
+
         </script>
          </section>
       

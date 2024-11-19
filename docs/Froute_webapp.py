@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template, send_from_directory
+from flask_cors import CORS #(Cross Origin Resource Sharing)
 import googlemaps
 import geocoder #Geocoder for location based off of IP
 import random #RNG library
@@ -10,6 +11,7 @@ import os
 # Load environment variables from the .env file (only keep for dev)
 load_dotenv(override=True)
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "https://yehinkang.github.io/"}}) # Allows for requests to Render from yehinkang.github.io
 
 # Access the API key
 API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
