@@ -116,7 +116,8 @@ def get_place_route():
     rand_location = get_random_location(business_list)
     
     # Construct the Google Maps URL for the place
-    place_url = f"https://www.google.com/maps/place/?q=place_id:{rand_location.get('place_id')}"
+    place_url = f"https://www.google.com/maps/search/?api=1&query=place_id:{rand_location.get('place_id')}"
+
 
     # Return the place name and the Google Maps link
     return jsonify({
