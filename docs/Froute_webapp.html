@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <!--The folowing is what will show up in the tab as website name-->
+        <title>Yeh-In Kang</title>
+            
+        <!--This ensures that the size of the viewport responds to screen width-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--The folowing is what will show up on google-->
+        <meta name="description" content="Yeh-In's personal webpage">
+        
+        <!--This is for the little icon in the tab (favicon)-->
+        <link rel="icon" href="images\icons\YK_favicon.png">
+        
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        
+        <!--This next bit is to link to the animate on scroll library that will be used to animate the text on the webpage-->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        
+        <!--This is importing the font to be used on the webpage-->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        
+        <!--This next bit is to link to the bootstrap css framework-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--Important to bring in custom css after bootstrap-->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+
+    <body>
+        
+    </body>
+
+    <body>
+		
+		<div class="container d-md-flex align-items-stretch">
+      <!-- Page Content  -->
+      <div class="container d-md-flex align-items-stretch">
+        <div id="content" class="p-4 p-md-5 pt-5">
+
+          <!-- Making Sections to organise main page this is the intro  -->
+         <section id="intro">
+          <h6 class="mb-4 text-muted"> <a href="index.html"> &lt;&lt; Home</a> </h6>
+          <h1 class="mb-4">FRoute Webapp</h1>
+          <h6 class="mb-4 text-muted">November 18, 2024</h6>
+          <h6 class="mb-4 text-muted">Tags: <a href="Tags_Software.html">Software</a> </h6>
+
+          <!-- Line break to provide margin from the photo to the text -->
+          <br>
+
+          <h1>Welcome to Froute!</h1>
+
+          <p>Click "Get My Location" first for the browser to figure out where you are. Enter what you're looking to do food, 
+            entertainment .etc and then select a radius.</p>
+        <form id="searchForm">
+            <label for="search">Search for:</label>
+            <input type="text" id="search" name="search" placeholder="e.g., restaurant" required>
+            <label for="distance">Distance (meters):</label>
+            <input type="number" id="distance" name="distance" placeholder="e.g., 1000" required>
+            <button type="submit">Find Place</button>
+        </form>
+
+        <button onclick="getLocation()">Get My Location</button>
+
+        <h2>Results:</h2>
+        <div id="result">
+            <!-- This is where the result will appear -->
+        </div>
+
+        <script>
+            let userLocation = null;  // Variable to store the location coordinates
+
+            // Function to get the location from the browser
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        userLocation = { latitude, longitude };  // Store the location
+
+                        alert("Location acquired: " + latitude + ", " + longitude);  // Optional: Alert to confirm location
+                    });
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                }
+            }
+
+            // Event listener for form submission
+            document.getElementById("searchForm").addEventListener("submit", async function(event) {
+                event.preventDefault();  // Prevent form from submitting normally
+
+                // Ensure that the location has been acquired before sending the request
+                if (!userLocation) {
+                    alert("Please get your location first.");
+                    return;
+                }
+
+                let searchString = document.getElementById("search").value;
+                let distance = document.getElementById("distance").value;
+
+                // Send search parameters and location to the backend
+                let response = await fetch("/get-place", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        search_string: searchString,
+                        distance: distance,
+                        latitude: userLocation.latitude,
+                        longitude: userLocation.longitude
+                    })
+                });
+
+                let data = await response.json();
+
+                if (data.error) {
+                    document.getElementById("result").innerText = "Error: " + data.error;
+                } else {
+                    // Show the link to Google Maps
+                    let link = `<a href="${data.google_maps_url}" target="_blank">${data.place_name}</a>`;
+                    document.getElementById("result").innerHTML = "Place found: " + link;
+                }
+            });
+        </script>
+         </section>
+      
+        </div>    
+        
+        <!-- The whole Sidebar-->
+        <div id="sidebar-container"></div>
+
+	      </div>
+		</div>
+
+    <!-- JavaScript to load the sidebar -->
+    <script>
+     // Function to load HTML from a file
+     function loadHTML(url, containerId) {
+        fetch(url)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById(containerId).innerHTML = data;
+          })
+          .catch(error => {
+            console.error('Error loading HTML:', error);
+          });
+      }
+
+      // Load the sidebar into the container
+      loadHTML('sidebar.html', 'sidebar-container');
+    </script>
+
+    <!--The following is initialising the script needed for animate on scroll to run-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>          
+       AOS.init();
+    </script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>
