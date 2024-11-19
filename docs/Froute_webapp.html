@@ -58,6 +58,12 @@
 
           <p>Click "Get My Location" first for the browser to figure out where you are. Enter what you're looking to do food, 
             entertainment .etc and then select a radius.</p>
+
+        <button onclick="getLocation()">Get My Location</button>
+
+        <br>
+        <br>
+
         <form id="searchForm">
             <label for="search">Search for:</label>
             <input type="text" id="search" name="search" placeholder="e.g., restaurant" required>
@@ -66,8 +72,7 @@
             <button type="submit">Find Place</button>
         </form>
 
-        <button onclick="getLocation()">Get My Location</button>
-
+        
         <h2>Results:</h2>
         <div id="result">
             <!-- This is where the result will appear -->
