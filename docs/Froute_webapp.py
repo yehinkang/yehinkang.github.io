@@ -48,6 +48,7 @@ def get_surrounding_locations(location, search_string, distance):
         location=location,
         keyword=search_string,
         radius=distance
+        open_now=True #only returns places that are currently open
     )
     return response
 
