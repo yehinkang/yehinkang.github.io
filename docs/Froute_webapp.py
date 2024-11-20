@@ -1,46 +1,27 @@
 from flask import Flask, request, jsonify, render_template, send_from_directory
-from flask_cors import CORS #(Cross Origin Resource Sharing)
-import googlemaps
+from flask_cors import CORS #(Cross Origin Resource Sharing, allows service to be pinged from all URLs)
+import googlemaps #Google Maps API
 import geocoder #Geocoder for location based off of IP
 import random #RNG library
-from dotenv import load_dotenv
+from dotenv import load_dotenv #Important when testing locally and service is not on render
 import os
 
-#Addewd line here to test if git command line works
 # Load environment variables from the .env file (only keep for dev)
 load_dotenv(override=True)
 app = Flask(__name__)
 CORS(app) # Using this for troubleshooting allows for access from all URL's
 # CORS(app, resources={r"/*": {"origins": "https://yehinkang.github.io/"}}) # Allows for requests to Render from yehinkang.github.io
 
-# Access the API key
+# Access the API key stored as .env variable
 API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
 
 if not API_KEY:
     raise ValueError("Google Maps API key is missing. Check your .env file.")
-print(f"API Key: {API_KEY}")
+
+#The following is for troubleshooting if the API key changes
+#print(f"API Key: {API_KEY}")
 
 map_client = googlemaps.Client(API_KEY)
-
-#Function to get (lat, long) using the geocoding library (Wasn't working well)
-"""
-def get_my_location():
-    g = geocoder.ip('me')
-    location = (g.latlng[0], g.latlng[1])
-    return location
-"""
-
-#Function to get (lat, long) using google's geocoding library
-def get_my_location():
-    g = geocoder.ip('me')
-    lat, lng = g.latlng  # Fallback method using IP
-    if lat and lng:
-        # Optionally use Google Maps Geocoding API for more accuracy
-        reverse_geocode = map_client.reverse_geocode((lat, lng))
-        if reverse_geocode:
-            # You could use reverse_geocode[0] to get more precise information
-            return reverse_geocode[0]['geometry']['location']
-    return lat, lng  # Fallback location
 
 #Uses a keyword search to find suitable locations based off of geocoding and search radius
 def get_surrounding_locations(location, search_string, distance):
@@ -58,11 +39,13 @@ def get_random_location(business_list):
     return business_list[rand]
 
 #Loading the index html page ('/' denotes home route)
-@app.route('/')
-def index():
-    return send_from_directory(os.getcwd(), 'FRoute_webapp.html')
-#def index():
-#    return render_template('Froute_webapp.html')
+# @app.route('/')
+# def index():
+#     return send_from_directory(os.getcwd(), 'FRoute_webapp.html')
+
+#The following line is to be used when testing the program locally.
+"""def index():
+    return render_template('Froute_webapp.html')"""
 
 
 #The following is to actually load the page after a place is found.
