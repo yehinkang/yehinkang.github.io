@@ -47,7 +47,7 @@ def get_surrounding_locations(location, search_string, distance):
     response = map_client.places_nearby(
         location=location,
         keyword=search_string,
-        radius=distance
+        radius=distance,
         open_now=True #only returns places that are currently open
     )
     return response
