@@ -68,9 +68,13 @@ def get_place_route():
 
     # Pick a random business from the list
     rand_location = get_random_location(business_list)
+
+    # Extract the latitude and longitude of the selected business
+    business_lat = rand_location.get('geometry', {}).get('location', {}).get('lat')
+    business_lng = rand_location.get('geometry', {}).get('location', {}).get('lng')
     
     # Construct the Google Maps URL for the place
-    place_url = f"https://www.google.com/maps/place/?q=place_id:{rand_location.get('place_id')}"
+    place_url = f"https://www.google.com/maps/search/?api=1&query={business_lat}%2C{business_lng}&query_place_id={rand_location.get('place_id')}"
 
 
     # Return the place name and the Google Maps link
