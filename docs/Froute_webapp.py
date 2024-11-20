@@ -3,7 +3,6 @@ from flask_cors import CORS #(Cross Origin Resource Sharing)
 import googlemaps
 import geocoder #Geocoder for location based off of IP
 import random #RNG library
-import re
 from dotenv import load_dotenv
 import os
 
@@ -11,8 +10,8 @@ import os
 # Load environment variables from the .env file (only keep for dev)
 load_dotenv(override=True)
 app = Flask(__name__)
-CORS(app) # Using this for troubleshooting allows for access from all URL's
-# CORS(app, resources={r"/*": {"origins": "https://yehinkang.github.io/"}}) # Allows for requests to Render from yehinkang.github.io
+# CORS(app) # Using this for troubleshooting allows for access from all URL's
+CORS(app, resources={r"/*": {"origins": "https://yehinkang.github.io/"}}) # Allows for requests to Render from yehinkang.github.io
 
 # Access the API key
 API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
@@ -57,41 +56,12 @@ def get_random_location(business_list):
     rand = random.randint(0, len(business_list)-1)
     return business_list[rand]
 
-#The following are functions related to getting directions to the location
-#Prolly don't need them for the webapp and as such am commenting them out
-"""
-def get_directions(origin, destination):
-    directions = map_client.directions(
-        origin=origin,
-        destination=f"place_id:{destination}",
-        mode='walking'
-    )
-    return directions
-
-def parse_json(json):
-    parsed_steps = []
-    leg = json[0].get('legs')[0]
-    steps = leg.get('steps')
-    for step in steps:
-        pattern = re.compile(r'<.*?>')
-        cleaned_text = re.sub(pattern, '', step.get('html_instructions'))
-        parsed_steps.append(
-            {
-                "distance": step.get('distance'),
-                "html_instructions": cleaned_text,
-                "maneuver": step.get('maneuver')
-            }
-        )
-    return parsed_steps
-"""
-
 #Loading the index html page ('/' denotes home route)
 @app.route('/')
 def index():
     return send_from_directory(os.getcwd(), 'FRoute_webapp.html')
 #def index():
 #    return render_template('Froute_webapp.html')
-
 
 
 #The following is to actually load the page after a place is found.
@@ -124,6 +94,7 @@ def get_place_route():
         "place_name": rand_location.get('name'),
         "google_maps_url": place_url
     })
+
 @app.route('/get-location', methods=['POST'])
 def get_location():
     data = request.get_json()
