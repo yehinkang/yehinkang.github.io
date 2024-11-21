@@ -56,7 +56,10 @@ def get_place_route():
     longitude = data.get('longitude')  # User's longitude
     location = (latitude, longitude)  # Create a tuple for location
     search_string = data.get('search_string', 'restaurant')  # Search keyword (defaults to 'restaurant')
-    distance = data.get('distance', 1000)  # Search radius (defaults to 1000 meters)
+    distance = data.get('distance', 1000)  # Default to 1000 meters
+    
+    if distance > 5000:
+        return jsonify({"error": "Radius exceeds the maximum limit of 5000 meters"}), 400
 
     # Find nearby places based on the search string and radius
     response = get_surrounding_locations(location, search_string, distance)
