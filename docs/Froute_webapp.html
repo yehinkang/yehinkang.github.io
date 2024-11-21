@@ -52,7 +52,7 @@
           <h1>Welcome to Froute!</h1>
 
           <p>Click "Get My Location" first for the browser to figure out where you are. Enter what you're looking to do food, 
-            entertainment .etc and then select a radius.
+            entertainment .etc and then select a radius. Max distance is 5000m or 5km
 
         <button onclick="getLocation()">Get My Location</button>
 
@@ -63,7 +63,7 @@
             <label for="search">Search for:</label>
             <input type="text" id="search" name="search" placeholder="e.g., restaurant" required>
             <label for="distance">Distance (meters):</label>
-            <input type="number" id="distance" name="distance" placeholder="e.g., 1000" required>
+            <input type="number" id="distance" name="distance" placeholder="e.g., 1000" max="5000" required>
             <button type="submit">Find Place</button>
         </form>
 
